@@ -21,6 +21,11 @@ const App = () => {
     setBody('')
   }
 
+  const deleteAllEvents = e => {
+    e.preventDefault()
+    dispatch({type: 'DELETE_ALL_EVENTS'})
+  }
+
   return (
     <React.Fragment>
       <div className="container-fluid">
@@ -39,7 +44,7 @@ const App = () => {
         </div>
 
         <button className="btn btn-primary" onClick={addEvent}>イベントを作成する</button>
-        <button className="btn btn-danger">全てのイベントを削除する</button>
+        <button className="btn btn-danger" onClick={deleteAllEvents}>全てのイベントを削除する</button>
         
         <h4>イベント一覧</h4>
         <table className="table table-hover">
